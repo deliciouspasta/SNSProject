@@ -1,0 +1,32 @@
+version: '3.7'
+
+services:
+  SNSproject_db:
+    image: postgres:13.5-bullseye
+    container_name: 'SNSproject_db'
+    expose: 
+      - "5432"
+    environment:
+      - TZ=Asia/Tokyo
+    env_file:
+      - db.env
+    volumes:
+      - ../SNSproject_db/database:/var/lib/postgresql/data
+      - ../SNSproject_db/init:/docker-entrypoint-initdb.d
+
+  SNSproject:
+    image: django/web:1.0
+    build: ./web
+    container_name: SNSproject
+    ports:
+      - 8000:8000
+    env_file:
+      - web.env
+    depends_on: 
+      - SNSproject_db
+    command: /bin/bash
+    stdin_open: true
+    tty: true
+
+    volumes:
+            - ../SNSproject:/home/testuser1/dev

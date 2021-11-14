@@ -1,0 +1,12 @@
+{
+    "name": "SNS Project",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "SNSproject",
+    "workspaceFolder": "/home/testuser1/dev",
+    "extensions": [
+        "ms-python.python"
+    ],
+    "settings": {
+        "editor.tabSize": 2,
+    }
+}
