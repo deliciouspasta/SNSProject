@@ -79,8 +79,8 @@ WSGI_APPLICATION = 'sns_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ballon_db',
-        'USER': os.environ.get('POST_DB_USER'),
+        'NAME': os.environ.get('POST_DB_DATABASE'),
+        'USER': os.environ.get('POST_DB_USERNAME'),
         'PASSWORD': os.environ.get('POST_DB_PASSWORD'),
         'HOST': 'SNSproject_db',
         'POST': '5432',
