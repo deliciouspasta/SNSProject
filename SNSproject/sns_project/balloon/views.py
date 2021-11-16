@@ -1,7 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-import datetime
+from django.views import generic
 
-def index(request):
-    now = datetime.datetime.now()
-    return HttpResponse(f'現在時刻：{now}')
+class IndexView(generic.TemplateView):
+    template_name = "index.html"
