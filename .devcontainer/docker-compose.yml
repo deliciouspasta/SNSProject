@@ -30,3 +30,14 @@ services:
 
     volumes:
             - ../SNSproject:/home/testuser1/dev
+
+  front_end:
+    image: vue/front_end:1.0
+    build: ./front_end
+    container_name: front_end
+    volumes:
+      - ../front_end:/app:cached
+      - ../front_end/node_modules:/app/node_modules 
+    tty: true
+    ports:
+      - "8080:8080"
