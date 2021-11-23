@@ -1,8 +1,8 @@
 {
     "name": "SNS Project",
     "dockerComposeFile": "docker-compose.yml",
-    "service": "SNSproject",
-    "workspaceFolder": "/home/testuser1/dev",
+    "service": "sns_web",
+    "workspaceFolder": "/",
     "extensions": [
         "ms-python.python"
     ],

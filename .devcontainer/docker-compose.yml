@@ -1,35 +1,53 @@
 version: '3.7'
 
 services:
-  SNSproject_db:
+  sns_db:
     image: postgres:13.5-bullseye
-    container_name: 'SNSproject_db'
+    container_name: 'sns_db'
     expose: 
       - "5432"
     environment:
       - TZ=Asia/Tokyo
     env_file:
-      - db.env
+      - sns_db.env
     volumes:
-      - ../SNSproject_db/database:/var/lib/postgresql/data
-      - ../SNSproject_db/init:/docker-entrypoint-initdb.d
+      - ../sns_db/database:/var/lib/postgresql/data
+      - ../sns_db/init:/docker-entrypoint-initdb.d
 
-  SNSproject:
-    image: django/web:1.0
-    build: ./web
-    container_name: SNSproject
+  sns_web:
+    image: nginx/sns_web:1.0
+    build: ./sns_web
+    container_name: sns_web
     ports:
       - 8000:8000
     env_file:
-      - web.env
+      - sns_web.env
     depends_on: 
-      - SNSproject_db
+      - back_end
     command: /bin/bash
     stdin_open: true
     tty: true
-
     volumes:
-            - ../SNSproject:/home/testuser1/dev
+      - ../sns_web/logs/nginx/:/var/log/nginx/
+      - ../sns_web/uwsgi_params:/etc/nginx/uwsgi_params
+      - ../back_end/static/:/var/www/static/
+
+  back_end:
+      image: django/back_end:1.0
+      build: ./back_end
+      container_name: back_end
+      expose:
+        - "8001"
+      env_file:
+        - back_end.env
+      depends_on:
+        - sns_db
+      command: /bin/bash
+      stdin_open: true
+      tty: true
+      volumes:
+        - ../back_end:/home/testuser1/dev
+
 
   front_end:
     image: vue/front_end:1.0

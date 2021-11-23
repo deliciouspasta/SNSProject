@@ -2,6 +2,12 @@ FROM python:3.9-slim-bullseye
 
 RUN apt-get update && apt-get install -y tzdata && rm -rf /var/lib/apt/list/*
 
+RUN pip install wheel
+
+RUN apt-get install build-essential python -y
+
+RUN apt-get install python3.9-dev -y
+
 WORKDIR /tmp/work
 
 COPY requirements.txt ${PWD}

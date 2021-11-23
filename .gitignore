@@ -1,4 +1,4 @@
-/SNSproject_db/database
-/SNSproject/log
+/sns_db/database
+/sns_web/log
 /front_end/balloon_front/node_modules
 *.env
