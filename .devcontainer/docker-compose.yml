@@ -42,8 +42,7 @@ services:
         - back_end.env
       depends_on:
         - sns_db
-      command: /bin/bash
-      stdin_open: true
+      command: bash -c "cd /home/testuser1/dev/SNSproject && sh start.sh && /bin/bash"
       tty: true
       volumes:
         - ../back_end:/home/testuser1/dev
