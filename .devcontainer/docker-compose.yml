@@ -52,6 +52,7 @@ services:
     image: vue/front_end:1.0
     build: ./front_end
     container_name: front_end
+    command: bash -c "cd /app && sh start.sh && /bin/bash"
     volumes:
       - ../front_end:/app:cached
       - ../front_end/node_modules:/app/node_modules 

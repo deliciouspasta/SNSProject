@@ -1,6 +1,8 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <h2>ここに結果が表示されます → {{ result }}</h2>
+    <button @click="getAPI()">クリック！</button>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -35,6 +37,21 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+
+  data () {
+    return {
+      result: 'No Result',
+      url: 'http://localhost:8000/back_end/balloon/get/'
+    }
+  },
+  methods: {
+    getAPI () {
+      this.$axios.get(this.url)
+      .then(response => {
+        this.result = response.data.message
+      })
+    }
   }
 }
 </script>
