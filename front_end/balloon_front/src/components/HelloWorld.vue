@@ -52,7 +52,8 @@ export default {
         this.result = response.data.message
       })
     }
-  }
+  },
+
 }
 </script>
 

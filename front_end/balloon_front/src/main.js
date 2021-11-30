@@ -1,15 +1,10 @@
 import Vue from 'vue'
-import { createApp } from 'vue'
 import App from './App.vue'
+import axios from 'axios'
 
-createApp(App).mount('#app')
+Vue.config.productionTip = false
+Vue.prototype.$axios = axios
 
-
-Vue.createApp({
-  el: '#app',
-  data(){
-      return {
-          message: 'Hello Axios',
-      }
-  },
-}).mount('#app')
+new Vue({
+  render: h => h(App),
+}).$mount('#app')

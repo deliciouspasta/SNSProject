@@ -1,4 +1,5 @@
 /sns_db/database
 /sns_web/log
+/sns_web/confs
 /front_end/balloon_front/node_modules
 *.env

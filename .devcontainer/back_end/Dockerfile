@@ -8,6 +8,12 @@ RUN apt-get install build-essential python -y
 
 RUN apt-get install python3.9-dev -y
 
+RUN apt-get install libpcre3-dev -y
+
+RUN pip install uwsgi -I --no-cache-dir
+
+RUN pip install uwsgi
+
 WORKDIR /tmp/work
 
 COPY requirements.txt ${PWD}

@@ -19,7 +19,7 @@ services:
     build: ./sns_web
     container_name: sns_web
     ports:
-      - 8000:8000
+      - "8000:8000"
     env_file:
       - sns_web.env
     depends_on: 
@@ -28,8 +28,10 @@ services:
     stdin_open: true
     tty: true
     volumes:
+      - ../sns_web/confs/default.conf:/etc/nginx/conf.d/default.conf
+      - ../sns_web/confs/nginx.conf:/etc/nginx/nginx.conf
+      - ../sns_web/confs/uwsgi_params:/etc/nginx/uwsgi_params
       - ../sns_web/logs/nginx/:/var/log/nginx/
-      - ../sns_web/uwsgi_params:/etc/nginx/uwsgi_params
       - ../back_end/static/:/var/www/static/
 
   back_end:
