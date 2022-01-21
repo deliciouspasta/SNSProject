@@ -24,7 +24,7 @@ services:
       - sns_web.env
     depends_on: 
       - back_end
-    command: /bin/bash
+    command: bash -c "/etc/init.d/nginx restart && /bin/bash"
     stdin_open: true
     tty: true
     volumes:

@@ -50,6 +50,7 @@ export default {
       this.$axios.get(this.url)
       .then(response => {
         this.result = response.data.message
+        // this.$set(this.result, "result", response.data.message)
       })
     }
   },
