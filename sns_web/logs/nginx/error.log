@@ -1,0 +1,1 @@
+2022/01/13 20:55:06 [emerg] 20258#20258: host not found in upstream "back_end:8001" in /etc/nginx/conf.d/default.conf:4
