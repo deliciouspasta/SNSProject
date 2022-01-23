@@ -33,6 +33,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'HelloWorld',
   props: {
@@ -47,11 +48,27 @@ export default {
   },
   methods: {
     getAPI () {
-      this.$axios.get(this.url)
+      // this.result = "this is test"
+      axios.get(this.url)
       .then(response => {
         this.result = response.data.message
-        // this.$set(this.result, "result", response.data.message)
       })
+
+
+
+      // .catch(function(error){
+      //   if (error.response){
+      //     console.log(error.response.data)
+      //     console.log(error.response.status)
+      //   }
+      // })
+      // this.$axios({
+      //   method : 'GET',
+      //   url : this.url
+      // }).then(response => {
+      //   this.result = response.data.message
+      // })
+
     }
   },
 

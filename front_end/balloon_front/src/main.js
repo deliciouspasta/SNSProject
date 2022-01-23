@@ -1,10 +1,14 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
+// import Vue from 'vue'
 import App from './App.vue'
-import axios from 'axios'
+// import axios from 'axios'
 
-Vue.config.productionTip = false
-Vue.prototype.$axios = axios
 
-new Vue({
-  render: h => h(App),
-}).$mount('#app')
+createApp(App).mount('#app')
+
+// Vue.prototype.$axios = axios
+// const app = createApp({App})
+
+// createApp(App).config.globalProperties.$axios = axios
+
+// createApp(App).provide('$axios', axios)
