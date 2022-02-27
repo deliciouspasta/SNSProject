@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img alt="Vue logo" src="./assets/balloonlogo.png">
+    <HelloWorld msg="SNS"/>
+    <button class="btn btn-primary">bootstrap test</button>
   </div>
 </template>
 
