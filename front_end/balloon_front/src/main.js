@@ -3,10 +3,17 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import { router } from './router'
+// import router from './router'
+// import router from './router'
+
 // import axios from 'axios'
 
+const app = createApp(App)
+// app.use(router)
+app.use(router)
+app.mount('#app')
 
-createApp(App).mount('#app')
 
 // Vue.prototype.$axios = axios
 // const app = createApp({App})
