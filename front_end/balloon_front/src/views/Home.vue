@@ -1,27 +1,58 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/balloonlogo.png">
-    <h1>this is HOME!</h1>
-    <h1 class="bg-secondary text-white display-4 px-3">Vue3</h1>
-    <h1>{{ msg }}</h1>
 
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-
-    <router-link to="/" class="btn btn-primary mx-2">
-        Go to Top
-    </router-link>
-    <router-link to="/balloonpage" class="btn btn-warning">
-        Go to Balloon
+    <router-link to="/balloonpage" class="btn btn-primary mx-2">
+        はじめる
     </router-link>
 
     <!-- <h2>ここに結果が表示 → {{ result }}</h2> -->
     <button class="btn btn-primary" @click="getAPI()">はじめる</button>
     <p class="display-1">{{msg}}</p>
-    <div class="card" style="width:18rem;">
+    <!-- <div class="card" style="width:18rem;">
       <h5 class="cart-title">Balloonとは</h5>
       <p class="cart-text">サービスです</p>
+    </div> -->
+
+    <div class="card-deck">
+      <div class="card" style="width: 54rem;">
+        <svg class="bd-placeholder-img card-img-top" width="300%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect fill="#868e96" width="100%" height="100%"/><text fill="#dee2e6" dy=".3em" x="50%" y="50%">Image cap</text></svg>
+        <div class="card-body">
+          <h5 class="card-title">Balloonとは</h5>
+          <p class="card-text">インターネット上の誰かと会話するサービスです。</p>
+          <router-link to="/balloonpage" class="btn btn-primary mx-2">
+            はじめる
+          </router-link>
+        </div>
+      </div>
+
+      <div class="card" style="width: 54rem;">
+        <svg class="bd-placeholder-img card-img-top" width="300%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect fill="#868e96" width="100%" height="100%"/><text fill="#dee2e6" dy=".3em" x="50%" y="50%">Image cap</text></svg>
+        <div class="card-body">
+          <h5 class="card-title">Balloonとは</h5>
+          <p class="card-text">インターネット上の誰かと会話するサービスです。</p>
+          <router-link to="/balloonpage" class="btn btn-primary mx-2">
+            はじめる
+          </router-link>
+        </div>
+      </div>
+
+      <div class="card" style="width: 54rem;">
+        <svg class="bd-placeholder-img card-img-top" width="300%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect fill="#868e96" width="100%" height="100%"/><text fill="#dee2e6" dy=".3em" x="50%" y="50%">Image cap</text></svg>
+        <div class="card-body">
+          <h5 class="card-title">Balloonとは</h5>
+          <p class="card-text">インターネット上の誰かと会話するサービスです。</p>
+          <router-link to="/balloonpage" class="btn btn-primary mx-2">
+            はじめる
+          </router-link>
+        </div>
+      </div>
+
     </div>
+    
+
+
+
   </div>
 </template>
 
@@ -29,7 +60,7 @@
 <script>
 import axios from 'axios'
 export default {
-  name: 'HelloWorld',
+  name: 'Home',
   props: {
     msg: String
   },
@@ -47,22 +78,6 @@ export default {
       .then(response => {
         this.result = response.data.message
       })
-
-
-
-      // .catch(function(error){
-      //   if (error.response){
-      //     console.log(error.response.data)
-      //     console.log(error.response.status)
-      //   }
-      // })
-      // this.$axios({
-      //   method : 'GET',
-      //   url : this.url
-      // }).then(response => {
-      //   this.result = response.data.message
-      // })
-
     }
   },
 

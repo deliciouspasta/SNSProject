@@ -1,6 +1,5 @@
 <template>
   <div id="nav">
-    
     <HelloWorld/>
     <router-view/>
     <!-- <router-link to="/">Home</router-link> |
@@ -45,6 +44,7 @@ export default {
 
 #nav {
   padding: 30px;
+  height: 100vh;
   background-color: #e2fff6;
 }
 
