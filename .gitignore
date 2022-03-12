@@ -1,0 +1,7 @@
+/sns_db/database
+/sns_web/confs
+/sns_web/logs
+/back_end/SNSproject/SNSproject/settings.py
+/front_end/node_modules
+/front_end/balloon_front/node_modules
+*.env
