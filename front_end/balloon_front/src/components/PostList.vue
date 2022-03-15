@@ -2,7 +2,7 @@
   <div>
     <div v-for="(post, key) in Posts" :key="key">
       <hr>
-      <p>カテゴリ: {{ post.category }}</p>
+      <p>カテゴリ: {{ post.category.name }}</p>
       <p>タイトル: {{ post.title }}</p>
       <p>内容: {{ post.content }}</p>
       <p>投稿日: {{ post.published_at}}</p>
