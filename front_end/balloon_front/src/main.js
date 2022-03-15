@@ -7,7 +7,7 @@ import { router } from './router'
 // import router from './router'
 // import router from './router'
 
-// import axios from 'axios'
+import axios from 'axios'
 
 const app = createApp(App)
 // app.use(router)
@@ -18,6 +18,6 @@ app.mount('#app')
 // Vue.prototype.$axios = axios
 // const app = createApp({App})
 
-// createApp(App).config.globalProperties.$axios = axios
+app.config.globalProperties.$axios = axios
 
-// createApp(App).provide('$axios', axios)
+// app.provide('$axios', axios)

@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Balloon from '@/components/Balloon.vue'
+import PostList from '@/components/PostList.vue'
+
 
 export const router = createRouter({
   history: createWebHistory(),
@@ -14,6 +16,11 @@ export const router = createRouter({
       path: '/balloonpage',
       name: 'balloonpage',
       component: Balloon,
+    },
+    {
+      path: '/postlist',
+      name: 'postlist',
+      component: PostList,
     },
   ],
 })
