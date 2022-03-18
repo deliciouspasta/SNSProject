@@ -6,6 +6,10 @@
         はじめる
     </router-link>
 
+    <router-link to="/postlist" class="btn btn-primary mx-2">
+        これpostlist
+    </router-link>
+
     <!-- <h2>ここに結果が表示 → {{ result }}</h2> -->
     <button class="btn btn-primary" @click="getAPI()">はじめる</button>
     <p class="display-1">{{msg}}</p>
@@ -54,6 +58,7 @@
 
 
   </div>
+
 </template>
 
 

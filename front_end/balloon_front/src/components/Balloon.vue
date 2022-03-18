@@ -1,11 +1,11 @@
 <template>
-  <div class="alert alert-primary">
+  <div class="bal">
     <!-- <img alt="balloon back" src="../assets/balloon_back.png"> -->
-    <h2>{{title}}</h2>
-    <p>{{message}}</p>
+    <h2>{{ title }}</h2>
+    <p>{{ message }}</p>
     <button class="btn btn-primary m-3"
       v-on:click="doAction">
-    {{btn}}
+    {{ btn }}
     </button>
     <transition name="transit">
       <p v-if="flg" class="alert alert-light h5">
@@ -39,10 +39,10 @@ export default {
 
   data() {
     return {
-      title: 'Trans&Anim',
-      message:'This is Transition sample!',
+      title: 'Balloon',
+      message:'',
       flg:true,
-      btn:'Show/Hide',
+      btn:'balloonを見る',
     }
   },
   methods:{

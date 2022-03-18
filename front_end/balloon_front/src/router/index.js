@@ -1,9 +1,17 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import Vue from 'vue'
+import Router from 'vue-router'
 import Home from '../views/Home.vue'
 import Balloon from '@/components/Balloon.vue'
+import PostList from '@/components/PostList.vue'
+import PostPage from '@/components/PostPage.vue'
 
-export const router = createRouter({
-  history: createWebHistory(),
+import Auth from '@/components/pages/Auth.vue'
+import HedgeHogs from '@/components/pages/HedgeHogs.vue'
+
+Vue.use(Router)
+
+export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -15,6 +23,28 @@ export const router = createRouter({
       name: 'balloonpage',
       component: Balloon,
     },
+    {
+      path: '/postlist',
+      name: 'postlist',
+      component: PostList,
+    },
+    {
+      path: '/auth',
+      name: 'Auth',
+      component: Auth,
+    },
+    {
+      path: '/hedgehogs',
+      name: 'HedgeHogs',
+      component: HedgeHogs,
+    },
+    {
+      path: '/postpage',
+      name: 'PostPage',
+      component: PostPage,
+    },
+    
+
   ],
 })
 
