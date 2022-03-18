@@ -11,7 +11,7 @@
           
           maxlength="500"
           name="input-7-4"
-          label="風船をReleaseしましょう"
+          label="風船をReleaseしましょう!"
           required
         ></v-textarea>
 
