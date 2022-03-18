@@ -1,5 +1,5 @@
-# from django.contrib.auth.models import AbstractUser
+# from django.contrib.auth.models import AbstractBaseUser
 
-# class CustomUser(AbstractUser):
+# class CustomUser(AbstractBaseUser):
 #     class Meta:
 #         verbose_name_plural = 'CustomUser'

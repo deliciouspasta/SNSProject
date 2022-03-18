@@ -3,5 +3,12 @@
     "axios": "^0.24.0",
     "vue-axios": "^3.4.0",
     "vue-router": "^4.0.13"
+  },
+  "scripts": {
+    "run serve": "vue-cli-service serve --mode local",
+    "dev-serve": "vue-cli-service serve --mode development",
+    "prod-serve": "vue-cli-service serve --mode production",
+    "dev-build": "vue-cli-service build --mode development",
+    "prod-build": "vue-cli-service build --mode production"
   }
 }

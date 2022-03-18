@@ -1,21 +1,29 @@
 <template>
   <div id="nav">
-    <HelloWorld/>
-    <router-view/>
-    <!-- <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <v-app id="inspire">
+      <v-navigation-drawer
+        v-model="drawer"
+        app
+      >
+        <!--  -->
+      </v-navigation-drawer>
 
-    <router-link to="/" class="btn btn-primary mx-2">
-        Go to Top
-    </router-link>
-    <router-link to="/balloonpage" class="btn btn-warning">
-        Go to Balloon
-    </router-link>
+      <v-app-bar app>
+        <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <router-view></router-view> -->
+        <v-toolbar-title>Balloon</v-toolbar-title>
+      </v-app-bar>
+
+      <v-main>
+          <HelloWorld/>
+          <router-view/>
+      </v-main>
+  </v-app>
+
+
+
   </div>
+  
 </template>
 
 <script>
@@ -27,7 +35,8 @@ export default {
   },
   data(){
     return{
-      title: 'Router'
+      title: 'Router',
+      drawer: null
     }
   }
 }
@@ -45,7 +54,7 @@ export default {
 #nav {
   padding: 30px;
   height: 100vh;
-  background-color: #e2fff6;
+  background-color: #f8fffd;
 }
 
 #nav a {
