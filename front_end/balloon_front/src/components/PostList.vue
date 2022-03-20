@@ -3,9 +3,9 @@
     <div v-for="(post, key) in Posts" :key="key">
       <hr>
       <!-- <p>カテゴリ: {{ post.category.name }}</p> -->
-      <p>タイトル: {{ post.title }}</p>
-      <p>内容: {{ post.content }}</p>
-      <p>投稿日: {{ post.published_at}}</p>
+      <p>{{ post.author }} 氏</p>
+      <p>{{ post.content }}</p>
+      <p>日付: {{ moment(post.published_at) }}</p>
       <hr>
     </div>
     <p>this is test</p>
@@ -15,6 +15,10 @@
 
 <script>
 import axios from 'axios'
+import moment from 'moment'
+
+moment.locale("ja")
+
 export default {
     name: 'PostList',
     data() {
@@ -28,5 +32,10 @@ export default {
             .then(response => (this.Posts = response.data))
             .catch(error => console.log(error))
     },
+    methods:{
+        moment: function(date){
+            return moment(date).format('YYYY/MM/DD HH:mm:SS')
+        }
+    }
 };
 </script>

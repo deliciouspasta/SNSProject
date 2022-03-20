@@ -20,8 +20,9 @@ from django.contrib.auth.models import AbstractUser
 #         verbose_name_plural = 'CustomUser'
 
 class PostBalloon(models.Model):
-    author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
-    title = models.CharField(max_length=100)
+    # author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    # id = models.AutoField(primary_key=True)
+    author = models.CharField(max_length=100)
     content = models.TextField()
     published_at = models.DateTimeField(auto_now_add=True)
 
@@ -29,7 +30,7 @@ class PostBalloon(models.Model):
         ordering = ['-published_at']
 
     def __str__(self):
-        return self.title
+        return self.author
 
 # class PileColor(models.Model):
 #     """Holds the Pile Color, like SALT & PEPPER, Cinnamon"""
