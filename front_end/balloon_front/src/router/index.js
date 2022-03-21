@@ -6,7 +6,6 @@ import PostList from '@/components/PostList.vue'
 import PostPage from '@/components/PostPage.vue'
 
 import Auth from '@/components/pages/Auth.vue'
-import HedgeHogs from '@/components/pages/HedgeHogs.vue'
 
 Vue.use(Router)
 
@@ -32,11 +31,6 @@ export default new Router({
       path: '/auth',
       name: 'Auth',
       component: Auth,
-    },
-    {
-      path: '/hedgehogs',
-      name: 'HedgeHogs',
-      component: HedgeHogs,
     },
     {
       path: '/postpage',

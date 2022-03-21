@@ -17,6 +17,10 @@ from django.contrib import admin
 from django.urls import include, path
 # from rest_framework_jwt.views import obtain_jwt_token
 
+from . import settings_common
+from django.contrib.staticfiles.urls import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,3 +32,6 @@ urlpatterns = [
 
 
 ]
+
+urlpatterns += staticfiles_urlpatterns()
+urlpatterns += static(settings_common.MEDIA_URL, document_root=settings_common.MEDIA_ROOT)
