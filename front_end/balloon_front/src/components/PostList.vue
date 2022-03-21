@@ -3,8 +3,12 @@
     <div v-for="(post, key) in Posts" :key="key">
       <hr>
       <!-- <p>カテゴリ: {{ post.category.name }}</p> -->
-      <p>{{ post.author }} 氏</p>
+  
+      <p>{{ post.author }}</p>
+      
+      
       <p>{{ post.content }}</p>
+      <!-- <p>{{ post.image }}</p> -->
       <p>日付: {{ moment(post.published_at) }}</p>
       <hr>
     </div>

@@ -4,3 +4,4 @@ uwsgi==2.0.19
 django-cors-headers==3.8.0
 psycopg2-binary
 djangorestframework-jwt
+pillow
