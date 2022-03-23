@@ -22,6 +22,10 @@ RUN pip install -r requirements.txt
 
 ENV TZ=Asia/Tokyo
 
+
+RUN mkdir /usr/local/lib/python3.9/site-packages/rest_framework/static/media
+
+
 ENV USER testuser1
 
 RUN useradd -m ${USER} --uid 1000
