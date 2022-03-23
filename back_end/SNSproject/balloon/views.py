@@ -48,6 +48,7 @@ class PostListAPIView(generics.ListAPIView):
 class PostBalloonView(viewsets.ModelViewSet):
     queryset = PostBalloon.objects.all()
     serializer_class = PostBalloonSerializer
+    """ログイン済みの人だけ投稿できる（現在はオフ）"""
     # permission_classes = [permissions.IsAuthenticated]
     permission_classes = [permissions.AllowAny]
 

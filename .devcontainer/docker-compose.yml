@@ -33,6 +33,7 @@ services:
       - ../sns_web/confs/uwsgi_params:/etc/nginx/uwsgi_params
       - ../sns_web/logs/nginx/:/var/log/nginx/
       - ../back_end/static/:/var/www/static/
+      - ../back_end/SNSproject/media/:/var/www/static/media
 
   back_end:
       image: django/back_end:1.0
@@ -48,6 +49,7 @@ services:
       tty: true
       volumes:
         - ../back_end:/home/testuser1/dev
+        - ../back_end/SNSproject/media/:/usr/local/lib/python3.9/site-packages/rest_framework/static/media
 
 
   front_end:

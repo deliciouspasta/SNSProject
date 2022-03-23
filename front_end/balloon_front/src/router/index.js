@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Balloon from '@/components/Balloon.vue'
 import PostList from '@/components/PostList.vue'
 import PostPage from '@/components/PostPage.vue'
+import ReplyPage from '@/components/ReplyPage.vue'
 
 import Auth from '@/components/pages/Auth.vue'
 
@@ -36,6 +37,11 @@ export default new Router({
       path: '/postpage',
       name: 'PostPage',
       component: PostPage,
+    },
+    {
+      path: '/replypage',
+      name: 'ReplyPage',
+      component: ReplyPage,
     },
     
 

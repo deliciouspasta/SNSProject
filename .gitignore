@@ -1,6 +1,6 @@
 /sns_db/database
 /sns_db/database_past
-/sns_web/confs
+# /sns_web/confs
 /sns_web/logs
 
 
