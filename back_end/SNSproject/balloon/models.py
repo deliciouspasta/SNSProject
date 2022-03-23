@@ -24,7 +24,8 @@ class PostBalloon(models.Model):
     # id = models.AutoField(primary_key=True)
     author = models.CharField(max_length=100)
     content = models.TextField()
-    image = models.ImageField(upload_to='images/', blank=True, null=True)
+    # image = models.ImageField(upload_to='static/rest_framework/media/', blank=True, null=True)
+    image = models.ImageField(upload_to='media/', blank=True, null=True)
     published_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:

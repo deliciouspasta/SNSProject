@@ -23,6 +23,14 @@
           elevation="4"
           @click="release"
         >Release!</v-btn>
+
+        <v-file-input
+            accept="image/*"
+            label="画像をアップロード"
+            clearable
+            v-model="letters.image"
+        ></v-file-input>
+
       </v-col>
       <v-col
         cols="12"
@@ -87,7 +95,7 @@ if (csrftoken){
     console.error("csrftoken does not exist")
 }
 
-
+const formData = new FormData()
 
 
   export default {
@@ -99,7 +107,15 @@ if (csrftoken){
     }),
 
     methods: {
-
+      upimg(){
+          
+          formData.append("author", this.letters.author)
+          formData.append("content", this.letters.content)
+          if (this.letters.image){
+              formData.append("image", this.letters.image)
+          }
+        //   formData.append("image", this.letters.image)          
+      },
         
 
 
@@ -108,12 +124,13 @@ if (csrftoken){
       release(){
         // console.log(res.data.name + res.data.content)
         if (this.$refs.form.validate()){
+          this.upimg()
           axios({
             method: 'POST',
                     url: 'http://localhost:8000/back_end/balloon/release/',
                     xstfCookieName: 'csrftoken',
                     xsrfHeaderName: 'X-CSRFToken',
-                    data: this.letters,
+                    data: formData,
                     headers: {
                         'X-CSRFToken': csrftoken,
                     },
@@ -121,11 +138,7 @@ if (csrftoken){
 
 
 
-          }).then(res => {
-              this.$router.push({author:res.data.name, content:res.data.content})
-              console.log(res.data.name + res.data.content)
-              router.push('/balloonpage');
-            })
+          })
             
             .catch(function (error) {
                 if (error.response) {
@@ -147,7 +160,7 @@ if (csrftoken){
                 // console.log(csrftoken);
             });
             
-            
+            router.push('/balloonpage');
           
         }
       }

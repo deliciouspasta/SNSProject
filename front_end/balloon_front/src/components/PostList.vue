@@ -11,30 +11,35 @@
                 elevation="10"
             >
             <v-img
-                src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+
+                :src="imgSrc(post)"
                 height="200px"
             ></v-img>
 
     
 
             <v-card-title>
-            <p>---------</p>
-            <p>{{ post.author }}</p>
-            <p>---------</p>
-            
-            <p>{{ post.content }}</p>
+
+            <p class="font-weight-bold">{{ post.author }}</p>
+
+            <!-- <p>{{post.image}}</p> -->
+            <!-- <p>{{post.image.url}}</p> -->
+            <!-- <p>{{ post.content }}</p> -->
             <!-- <p>日付: {{ moment(post.published_at) }}</p> -->
             </v-card-title>
 
+            <v-card-subtitle>
+                <p class="font-weight-bold">{{ post.content }}</p>
+            </v-card-subtitle>
 
             <v-card-actions>
-            <v-btn
+            <!-- <v-btn
                 color="orange lighten-2"
                 text
                 @click="reply"
             >
                 返信する
-            </v-btn>
+            </v-btn> -->
 
             <v-spacer></v-spacer>
 
@@ -86,6 +91,16 @@ export default {
             })
             .catch(error => console.log(error))
     },
+
+    computed: {
+        imgSrc: function(){
+            return function(post){
+                return post.image
+            }
+            
+        }
+    },
+
     methods:{
         moment: function(date){
             return moment(date).format('YYYY/MM/DD HH:mm:SS')
@@ -100,9 +115,9 @@ export default {
             }
             return rand_posts
         },
-        reply(){
+        // reply(){
             
-        },
+        // },
     }
 };
 </script>

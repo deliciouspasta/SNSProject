@@ -13,11 +13,12 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from distutils.debug import DEBUG
 from django.contrib import admin
 from django.urls import include, path
 # from rest_framework_jwt.views import obtain_jwt_token
 
-from . import settings_common
+from . import settings_common, settings_dev
 from django.contrib.staticfiles.urls import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
@@ -33,5 +34,6 @@ urlpatterns = [
 
 ]
 
-urlpatterns += staticfiles_urlpatterns()
-urlpatterns += static(settings_common.MEDIA_URL, document_root=settings_common.MEDIA_ROOT)
+if settings_dev.DEBUG:
+    urlpatterns += staticfiles_urlpatterns()
+    urlpatterns += static(settings_common.MEDIA_URL, document_root=settings_common.MEDIA_ROOT)
