@@ -9,12 +9,12 @@
 /back_end/SNSproject/SNSproject/settings_dev.py
 /back_end/SNSproject/SNSproject/__pycache__
 /back_end/SNSproject/balloon/__pycache__
+/back_end/SNSproject/media
 
 
 /front_end/node_modules
 /front_end/balloon_front/node_modules
 /front_end_past
-/front_end/balloon_front/src/components/HelloWorld2.vue
 
 
 

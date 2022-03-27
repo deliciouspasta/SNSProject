@@ -13,7 +13,7 @@ router.register(r'release', PostBalloonView)
 urlpatterns = [
     path('get/', GetTestAPI.as_view()),
     # path('viewing/', )
-    path('test/', HelloWorld.as_view()),
+    path('test/', FirstView.as_view()),
 
     # path('categories/', CategoryListAPIView.as_view()),
     path('posts/', PostListAPIView.as_view()),

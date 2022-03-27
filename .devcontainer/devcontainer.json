@@ -1,17 +1,3 @@
-// {
-//     "name": "SNS Project",
-//     "dockerComposeFile": "docker-compose.yml",
-//     "service": "sns_web",
-//     "workspaceFolder": "/",
-//     "extensions": [
-//         "ms-python.python"
-//     ],
-//     "settings": {
-//         "editor.tabSize": 2,
-//     }
-// }
-
-
 {
     "name": "SNS Project",
     "dockerComposeFile": "docker-compose.yml",
@@ -25,17 +11,3 @@
     }
 }
 
-
-
-// {
-//     "name": "SNS Project",
-//     "dockerComposeFile": "docker-compose.yml",
-//     "service": "front_end",
-//     "workspaceFolder": "/",
-//     "extensions": [
-//         "ms-python.python"
-//     ],
-//     "settings": {
-//         "editor.tabSize": 2,
-//     }
-// }

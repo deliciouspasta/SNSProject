@@ -25,7 +25,7 @@ class GetTestAPI(APIView):
 
 
 
-class HelloWorld(APIView):
+class FirstView(APIView):
     permission_classes = (permissions.AllowAny,)
 
     def get(self, request, format=None):

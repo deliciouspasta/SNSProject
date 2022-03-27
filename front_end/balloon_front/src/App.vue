@@ -54,7 +54,7 @@
       </v-app-bar>
 
       <v-main>
-          <HelloWorld/>
+          <FirstView/>
           <router-view/>
       </v-main>
 
@@ -78,11 +78,11 @@
 </template>
 
 <script>
-import HelloWorld from '@/components/HelloWorld.vue'
+import FirstView from '@/components/FirstView.vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    FirstView
   },
   data(){
     return{

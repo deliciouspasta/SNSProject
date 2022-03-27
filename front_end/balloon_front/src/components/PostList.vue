@@ -42,30 +42,12 @@
             <v-card-title v-text="post.author"></v-card-title>
             </v-img>
 
-            
-            <!-- <v-card-title>
-                <p class="font-weight-bold">{{ post.author }}</p>
-            </v-card-title> -->
-    
-
             <v-card-title>
               <p class="font-weight-bold">{{ post.content }}</p>
             </v-card-title>
 
-            <!-- <v-card-subtitle>
-                <p class="font-weight-bold">{{ post.content }}</p>
-            </v-card-subtitle> -->
 
             <v-card-actions>
-            <!-- <v-btn
-                color="orange lighten-2"
-                text
-                @click="reply"
-            >
-                返信する
-            </v-btn> -->
-
-            <!-- <v-spacer></v-spacer> -->
 
             <v-btn
                 icon
@@ -139,9 +121,6 @@ export default {
             }
             return rand_posts
         },
-        // reply(){
-            
-        // },
     }
 };
 </script>
