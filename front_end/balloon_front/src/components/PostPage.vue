@@ -4,8 +4,8 @@
     v-model="valid"
     lazy-validation
     >
-  <v-container fluid>
-    <v-row>
+  <v-container fluid fill-height>
+    <v-row fill-height>
       <v-col
         cols="12"
         md="6"
@@ -16,42 +16,61 @@
           maxlength="50"
           name="input-7-4"
           label="名前"
-          required
+          :rules="requiredRules"
         ></v-textarea>
 
-        <v-btn
-          elevation="4"
-          @click="release"
-        >Release!</v-btn>
+        
 
-        <v-file-input
-            accept="image/*"
-            label="画像をアップロード"
-            clearable
-            v-model="letters.image"
-        ></v-file-input>
-
+        
       </v-col>
       <v-col
         cols="12"
         md="6"
       >
-      </v-col>
-
-      <v-textarea
+        
+        <v-textarea
           solo
           v-model="letters.content"
           maxlength="500"
           name="input-7-4"
           label="風船をReleaseしましょう"
-          required
+          :rules="requiredRules"
         ></v-textarea>
+
+      </v-col>
+
 
       <v-col
         cols="12"
         md="6"
       >
+
+        <v-file-input
+          accept="image/*"
+          label="画像をアップロード"
+          clearable
+          v-model="letters.image"
+        ></v-file-input>
+
+
       </v-col>
+
+      
+
+      <v-col
+        cols="12"
+        md="6"
+      >
+
+        <v-btn
+          elevation="4"
+          color="success"
+          @click="release"
+        >Release!</v-btn>
+
+
+      </v-col>
+
 
     </v-row>
   </v-container>
@@ -104,6 +123,10 @@ const formData = new FormData()
       loading:false,
       letters: {},
       select: null,
+      requiredRules:[
+        v => !!v || '入力必須の項目です',
+        v => (v && v.length < 201) || "文字数は200字以内です",
+      ]
     }),
 
     methods: {
@@ -160,7 +183,7 @@ const formData = new FormData()
                 // console.log(csrftoken);
             });
             
-            router.push('/balloonpage');
+            router.push('/postlist');
           
         }
       }

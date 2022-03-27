@@ -1,6 +1,29 @@
 <template>
     <v-container class="grey lighten-5">
-      <v-row
+        <p></p>
+        <h2>※投稿が反映されない場合は、再読み込みをしてください</h2>
+        <p></p>
+      <div class="text-center">
+
+      <v-row>
+
+        <v-col>
+
+          <v-btn
+            class="white--text md-6"
+            rounded
+            color="primary"
+            block
+            to="/postpage"
+            
+          >
+            投稿ページへ
+          </v-btn>
+          </v-col>
+      </v-row>
+    </div>
+
+      <v-row dense
       >
         <v-col
           v-for="(post, key) in rand_posts" :key="key"
@@ -11,26 +34,27 @@
                 elevation="10"
             >
             <v-img
-
                 :src="imgSrc(post)"
+                gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
                 height="200px"
-            ></v-img>
+                class="white--text align-end font-weight-bold"
+            >
+            <v-card-title v-text="post.author"></v-card-title>
+            </v-img>
 
+            
+            <!-- <v-card-title>
+                <p class="font-weight-bold">{{ post.author }}</p>
+            </v-card-title> -->
     
 
             <v-card-title>
-
-            <p class="font-weight-bold">{{ post.author }}</p>
-
-            <!-- <p>{{post.image}}</p> -->
-            <!-- <p>{{post.image.url}}</p> -->
-            <!-- <p>{{ post.content }}</p> -->
-            <!-- <p>日付: {{ moment(post.published_at) }}</p> -->
+              <p class="font-weight-bold">{{ post.content }}</p>
             </v-card-title>
 
-            <v-card-subtitle>
+            <!-- <v-card-subtitle>
                 <p class="font-weight-bold">{{ post.content }}</p>
-            </v-card-subtitle>
+            </v-card-subtitle> -->
 
             <v-card-actions>
             <!-- <v-btn
@@ -41,7 +65,7 @@
                 返信する
             </v-btn> -->
 
-            <v-spacer></v-spacer>
+            <!-- <v-spacer></v-spacer> -->
 
             <v-btn
                 icon

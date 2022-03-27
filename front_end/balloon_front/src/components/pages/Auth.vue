@@ -26,7 +26,7 @@
     ></v-text-field>
 
     <v-btn
-      :disabled="!valid"
+      :disabled="true"
       color="success"
       class="mr-4"
       @click="login"
@@ -41,6 +41,8 @@
     >
       Reset Form
     </v-btn>
+    <p></p>
+    <h2>お知らせ：現在ログイン機能は無効になっています</h2>
 
   </v-form>
 </template>
@@ -55,7 +57,7 @@ import router from '../../router'
       loading:false,
       credentials: {},
       emailRules: [
-        // v => !!v || 'メールアドレスを入力してください',
+        v => !!v || '入力必須の項目です',
         // v => /.+@.+\..+/.test(v) || 'メールアドレスを入力してください',
       ],
       passwordRules:[
@@ -71,7 +73,7 @@ import router from '../../router'
             axios.post('http://localhost:8000/back_end/balloon/auth/', this.credentials).then(res => {
                 this.$session.start();
                 this.$session.set('token', res.data.token);
-                router.push('/balloonpage');
+                router.push('/postlist');
             })
           }
       },
