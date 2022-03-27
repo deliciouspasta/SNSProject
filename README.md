@@ -6,6 +6,10 @@
 
 ![balloonlogo2_](https://user-images.githubusercontent.com/48623999/160273403-6850bf30-7b76-4425-a6bd-771206ba7bf2.png)
 
+## 使用技術
+
+![techs](https://user-images.githubusercontent.com/48623999/160278298-02d25333-d188-4f49-b85f-8f59a344dbb9.png)
+
 
 ## サイトホーム（一部）
 
