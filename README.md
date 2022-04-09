@@ -30,3 +30,8 @@
 
 ## 投稿一覧（一部）
 ![スクリーンショット 2022-03-27 133231](https://user-images.githubusercontent.com/48623999/160273450-f15b8afe-c229-44cf-a231-d7c03cf816ba.png)
+
+## 投稿ページ
+![postpage](https://user-images.githubusercontent.com/48623999/162594247-1ff11667-2fd8-407a-ba4b-920f794635a5.png)
+
+
