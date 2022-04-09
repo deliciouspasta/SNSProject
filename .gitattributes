@@ -1,1 +1,4 @@
-/front_end/node_modules/* linguist-vendored
+* linguist-vendored
+*.vue linguist-vendored=false
+*.python linguist-vendored=false
+Dockerfile linguist-vendored=false
