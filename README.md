@@ -8,7 +8,20 @@
 
 ## 使用技術
 
+- Docker
+- Django REST Framework ( API サーバー )
+- Vue.js
+- Nginx ( Web サーバー )
+- uWSGI ( アプリケーションサーバー )
+- PostgreSQL
+
 ![techs](https://user-images.githubusercontent.com/48623999/160278298-02d25333-d188-4f49-b85f-8f59a344dbb9.png)
+
+### 認証機能
+- Django REST Framework JWT
+
+### HTTP通信
+- axios
 
 
 ## サイトホーム（一部）
